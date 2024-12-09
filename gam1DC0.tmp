@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://baogsaiqwoewp"]
+
+[ext_resource type="PackedScene" uid="uid://65s471oib0o4" path="res://cards.tscn" id="1_dnp7x"]
+[ext_resource type="Script" path="res://game.gd" id="1_e61vb"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_e61vb")
+total_pairs = null
+heart_texture = null
+card_scene = ExtResource("1_dnp7x")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+clip_contents = true
+offset_left = 147.0
+offset_top = 140.0
+offset_right = 944.0
+offset_bottom = 509.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 285.0
+offset_top = 18.0
+offset_right = 859.0
+offset_bottom = 100.0
+
+[node name="WinLabel" type="Label" parent="."]
+visible = false
+offset_left = 481.0
+offset_top = 283.0
+offset_right = 693.0
+offset_bottom = 350.0
+theme_override_font_sizes/font_size = 48
+text = "YOU WIN"
+
+[node name="GameoverLabel" type="Label" parent="."]
+visible = false
+offset_left = 451.0
+offset_top = 283.0
+offset_right = 726.0
+offset_bottom = 350.0
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"

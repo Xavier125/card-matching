@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://baogsaiqwoewp"]
+
+[ext_resource type="PackedScene" uid="uid://65s471oib0o4" path="res://cards.tscn" id="1_dnp7x"]
+[ext_resource type="Script" path="res://game.gd" id="1_e61vb"]
+[ext_resource type="PackedScene" uid="uid://ddfob05ldbgom" path="res://heart.tscn" id="2_dwcnd"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_e61vb")
+heart_scene = ExtResource("2_dwcnd")
+card_scene = ExtResource("1_dnp7x")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 237.0
+offset_top = 196.0
+offset_right = 837.0
+offset_bottom = 546.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 240.0
+offset_top = 35.0
+offset_right = 814.0
+offset_bottom = 117.0
+
+[node name="GameoverLabel" type="Label" parent="."]
+visible = false
+offset_left = 473.0
+offset_top = 185.0
+offset_right = 748.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 466.0
+offset_top = 284.0
+offset_right = 753.0
+offset_bottom = 459.0
+theme_override_constants/separation = 25
+
+[node name="PlayAgainButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PLAY AGAIN"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

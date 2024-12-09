@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h24s7gegr2xs"]
+
+[ext_resource type="AudioStream" uid="uid://c0otj8pok83aw" path="res://assets/audio/fat-caps-audionatix.mp3" id="1_pmxx2"]
+
+[node name="bgm" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_pmxx2")
+autoplay = true
+bus = &"background"
